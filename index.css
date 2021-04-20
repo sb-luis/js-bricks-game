@@ -13,13 +13,24 @@ body {
 }
 
 body {
-  padding: 20px;
   text-align: center;
   font-family: monospace;
   background-color: var(--bgColor);
   color: var(--textColor);
   font-size: 1.25rem;
+}
 
+header{
+  padding: 5px;
+  min-height: 80px;
+  height: 15%;
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 85%;
 }
 
 h1 {
@@ -72,14 +83,14 @@ button {
 }
 
 .controls {
+  bottom: 5px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
 }
 
-.arrows{
+.arrows {
   display: flex;
 }
 
