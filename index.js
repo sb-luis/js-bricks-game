@@ -17,6 +17,7 @@ let spawnPos = [4, 1];
 let shapes = [
   {
     //Line
+    rotate: true,
     pos: [...spawnPos],
     tiles: [
       [-1, 0],
@@ -27,6 +28,7 @@ let shapes = [
   },
   {
     //L shape
+    rotate: true,
     pos: [...spawnPos],
     tiles: [
       [0, 0],
@@ -37,6 +39,7 @@ let shapes = [
   },
   {
     //T shape
+    rotate: true,
     pos: [...spawnPos],
     tiles: [
       [0, 0],
@@ -47,6 +50,7 @@ let shapes = [
   },
   {
     // Z shape
+    rotate: true,
     pos: [...spawnPos],
     tiles: [
       [0, 0],
@@ -57,7 +61,7 @@ let shapes = [
   },
   {
     // Square
-    static: true,
+    rotate: false,
     pos: [...spawnPos],
     tiles: [
       [0, 0],
@@ -171,6 +175,7 @@ function newShape() {
   //Create new shape
   let randomIndex = Math.floor(Math.random() * 5);
   currentShape = {
+    rotate: shapes[randomIndex].rotate,
     pos: [...shapes[randomIndex].pos],
     tiles: [...shapes[randomIndex].tiles],
   };
@@ -261,8 +266,7 @@ function translateShape(s, dir) {
 }
 
 function rotateShape(s) {
-  //If shape is static don't rotate it (i.e. squares)
-  if (s.static) return;
+  if (!s.rotate) return;
 
   //Copy shape tiles
   let shapeTiles = [...s.tiles];
@@ -431,18 +435,18 @@ function handleBtnDown(key) {
     case ' ':
       rotateIntent = true;
       break;
+    case 'ArrowUp':
+      rotateIntent = true;
+      break;
     case 'ArrowLeft':
-      //translateShape(currentShape, [-1, 0]);
       translateIntent = true;
       translateIntentDir = [-1, 0];
       break;
     case 'ArrowRight':
-      //translateShape(currentShape, [1, 0]);
       translateIntent = true;
       translateIntentDir = [1, 0];
       break;
     case 'ArrowDown':
-      //translateShape(currentShape, [0, 1]);
       translateIntent = true;
       translateIntentDir = [0, 1];
       break;
