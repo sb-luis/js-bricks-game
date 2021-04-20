@@ -20,24 +20,25 @@ body {
   font-size: 1.25rem;
 }
 
-header{
+header {
   padding: 5px;
   min-height: 80px;
   height: 15%;
 }
 
-main{
+main {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   height: 85%;
 }
 
-h1 {
+header h1 {
   font-size: 3rem;
 }
 
 .grid {
+  z-index: -1;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
@@ -130,6 +131,14 @@ button {
 }
 
 @media only screen and (max-width: 700px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
   :root {
     --tileMargin: 1px;
     --tileSize: 15px;
