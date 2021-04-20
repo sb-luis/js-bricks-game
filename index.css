@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  -webkit-tap-highlight-color: none;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  padding: 20px;
+  text-align: center;
+  font-family: monospace;
+  background-color: var(--bgColor);
+  color: var(--textColor);
+  font-size: 1.25rem;
+
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+.grid {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(
+    var(--boardWidth) * var(--tileSize) +
+      (var(--tileMargin) * 2 * var(--boardWidth))
+  );
+  height: calc(
+    var(--boardHeight) * var(--tileSize) +
+      (var(--tileMargin) * 2 * var(--boardHeight))
+  );
+}
+
+.grid div {
+  width: var(--tileSize);
+  height: var(--tileSize);
+  margin: var(--tileMargin);
+  background-color: var(--tileColor);
+}
+
+.grid div.staging {
+  background-color: var(--bgColor);
+}
+
+.grid div.filled {
+  background-color: var(--filledColor);
+}
+
+.grid div.trail {
+  background-color: var(--bgColor);
+}
+
+.grid div.flash {
+  background-color: var(--textColor);
+}
+
+button {
+  background-color: var(--bgColor);
+  border: 0;
+  width: var(--btnSize);
+  height: var(--btnSize);
+  margin: var(--btnMargin);
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.arrows{
+  display: flex;
+}
+
+.arrows button {
+  background: url('arrow-button.png') no-repeat right top;
+  background-size: var(--btnSize);
+}
+
+#left-btn {
+  transform: rotate(-90deg);
+}
+
+#right-btn {
+  transform: rotate(90deg);
+}
+
+#down-btn {
+  transform: rotate(180deg);
+}
+
+#main-btn {
+  background: url('empty-button.png') no-repeat right top;
+  background-size: var(--btnSize);
+}
+
+:root {
+  --btnSize: 50px;
+  --btnMargin: 5px;
+  --tileMargin: 2px;
+  --tileSize: 25px;
+  --boardWidth: 10;
+  --boardHeight: 20;
+  --bgColor: rgb(250, 68, 61);
+  --textColor: rgb(233, 233, 233);
+  --tileColor: rgba(255, 255, 255, 0.164);
+  --filledColor: rgb(224, 197, 75);
+}
+
+@media only screen and (max-width: 700px) {
+  :root {
+    --tileMargin: 1px;
+    --tileSize: 15px;
+  }
+}
