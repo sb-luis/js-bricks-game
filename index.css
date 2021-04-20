@@ -5,6 +5,7 @@
   outline: none;
   -webkit-tap-highlight-color: none;
   user-select: none;
+  font-family: monospace;
 }
 
 html,
@@ -15,7 +16,6 @@ body {
 
 body {
   text-align: center;
-  font-family: monospace;
   background-color: var(--bgColor);
   color: var(--textColor);
   font-size: 1.25rem;
